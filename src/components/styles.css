@@ -1,0 +1,54 @@
+/* Estilos adicionales para la tarjeta clickable */
+.clickable-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+  
+  .clickable-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--color-gris);
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+  
+  .clickable-card:hover .card-image {
+    transform: scale(1.03);
+  }
+  
+  .card-content {
+    padding: 1.5rem;
+  }
+  
+  .card-title {
+    color: var(--color-negro);
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+  }
+  
+  .card-description {
+    color: var(--color-gris-oscuro);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .card {
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-gris);
+    border-radius: 8px; /* Bordes un poco más redondeados */
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--sombra-suave);
+    backdrop-filter: blur(2px); /* Efecto vidrio sutil */
+    transition: all 0.3s ease;
+  }
