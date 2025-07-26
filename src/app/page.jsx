@@ -8,6 +8,7 @@ const projectsData = [
     description: "Una pequeña forma de ver manejar tus tareas y oganizar tu tiempo",
     category: "Web App",
     imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+    , redirectPage: "todo"
   },
   {
     id: 2,
@@ -15,6 +16,8 @@ const projectsData = [
     description: "Aplicación para gestión de reservas con calendario integrado.",
     category: "Mobile App",
     imageUrl: "https://images.unsplash.com/photo-1607748851687-ba9a10438621?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+    , redirectPage: "todo"
+
   },
   {
     id: 3,
@@ -22,6 +25,8 @@ const projectsData = [
     description: "Diseño minimalista para mostrar trabajos de diseño gráfico.",
     category: "Web Design",
     imageUrl: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+    , redirectPage: "todo"
+
   }
 ];
 
@@ -35,7 +40,10 @@ const ProjectsPage = () => {
 
       <div className="projects-grid">
         {projectsData.map((project, index) => (
-          <CardComponent key={index} imageUrl={project.imageUrl} title={project.title} description={project.description} />
+          <a href={project.redirectPage}>
+            <CardComponent key={index} imageUrl={project.imageUrl} title={project.title} description={project.description} />
+
+          </a>
         ))}
       </div>
     </div>

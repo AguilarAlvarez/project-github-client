@@ -1,0 +1,1 @@
+export const FETCH_ROUTE = "http://localhost:5000/api"
