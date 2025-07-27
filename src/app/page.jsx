@@ -12,11 +12,11 @@ const projectsData = [
   },
   {
     id: 2,
-    title: "Sistema de Reservas",
-    description: "Aplicación para gestión de reservas con calendario integrado.",
-    category: "Mobile App",
-    imageUrl: "https://images.unsplash.com/photo-1607748851687-ba9a10438621?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-    , redirectPage: "todo"
+    title: "PokeDex",
+    description: "PokeDex donde usando la poke api podras buscar entre una gran selecion de pokemons y ver su informacion, usando tailwindcss para los estilos y animaciones",
+    category: "web App",
+    imageUrl: "./Pokedex.png"
+    , redirectPage: "pokedex"
 
   },
   {
