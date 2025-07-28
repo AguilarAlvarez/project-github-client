@@ -1,0 +1,52 @@
+.mazeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90vw;
+    height: 90vh;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: #f1f8e9; /* Verde pastel */
+  }
+  
+  .maze {
+    display: grid;
+    grid-template-rows: repeat(40, 20px);
+    grid-template-columns: repeat(40, 20px);
+    gap: 2px;
+  }
+  
+  .row {
+    display: contents;
+  }
+  
+  .cell {
+    background-color: #c8e6c9; /* Verde claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    transition: all 0.3s;
+  }
+  
+  .wall {
+    background-color: #2e7d32; /* Verde oscuro */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .exit {
+    background-color: #ffeb3b; /* Amarillo */
+    animation: pulse 1.5s infinite;
+  }
+  
+  .winMessage {
+    font-size: 1.5rem;
+    color: #2e7d32;
+    margin-top: 2rem;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }

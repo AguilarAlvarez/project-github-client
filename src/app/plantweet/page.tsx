@@ -13,11 +13,12 @@ export default function App() {
     return (
         <div className="app">
             <Navbar />
+
             {!user ? (
                 <LoginForm />
             ) : (
                 <>
-                    <TweetForm onSumbit={() => { setRefresh(!refresh) }} />
+                    <TweetForm onSubmitRefresch={() => { setRefresh(!refresh) }} />
                     <TweetList refresh={refresh} />
                 </>
             )}

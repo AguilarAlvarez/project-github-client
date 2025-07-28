@@ -2,7 +2,11 @@ import { useState } from 'react';
 import { useAuth } from '@/context/AuthContext'
 import './tweetForm.css'
 import { FETCH_ROUTE } from '@/utils/consts';
-export default function TweetForm(onSubmit: any) {
+type formProps = {
+    onSubmitRefresch: () => void;
+};
+
+export default function TweetForm({ onSubmitRefresch }: formProps) {
     const [content, setContent] = useState('');
     const { user } = useAuth();
 
@@ -25,7 +29,7 @@ export default function TweetForm(onSubmit: any) {
                 .then(data => {
                     console.log(content, data)
                     if (data.state) {
-                        onSubmit()
+                        onSubmitRefresch()
                         setContent('');
                     }
                 });
@@ -68,3 +72,4 @@ export default function TweetForm(onSubmit: any) {
         </div>
     );
 };
+

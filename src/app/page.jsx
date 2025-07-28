@@ -21,9 +21,9 @@ const projectsData = [
   },
   {
     id: 3,
-    title: "Portafolio Creativo",
-    description: "Diseño minimalista para mostrar trabajos de diseño gráfico.",
-    category: "Web Design",
+    title: "PlanTweet",
+    description: "Una pequeña copia de tweeter con tematioca de jardin",
+    category: "Web App",
     imageUrl: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
     , redirectPage: "plantweet"
 
@@ -40,7 +40,7 @@ const ProjectsPage = () => {
 
       <div className="projects-grid">
         {projectsData.map((project, index) => (
-          <a href={project.redirectPage}>
+          <a key={index} href={project.redirectPage}>
             <CardComponent key={index} imageUrl={project.imageUrl} title={project.title} description={project.description} />
 
           </a>
