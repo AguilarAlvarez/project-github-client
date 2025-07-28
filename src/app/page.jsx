@@ -25,7 +25,7 @@ const projectsData = [
     description: "Diseño minimalista para mostrar trabajos de diseño gráfico.",
     category: "Web Design",
     imageUrl: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-    , redirectPage: "todo"
+    , redirectPage: "plantweet"
 
   }
 ];

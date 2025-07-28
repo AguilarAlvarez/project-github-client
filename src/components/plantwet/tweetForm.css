@@ -1,0 +1,111 @@
+/* Variables de color (debes tenerlas en tu :root) */
+:root {
+    --verde-oscuro: #2e7d32;
+    --verde-medio: #4caf50;
+    --verde-claro: #8bc34a;
+    --verde-pastel: #c8e6c9;
+    --texto-oscuro: #263238;
+    --fondo: #f1f8e9;
+  }
+  
+  /* Contenedor principal */
+  .tweet-form-container {
+    background-color: var(--verde-pastel);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 2px solid var(--verde-claro);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .tweet-form-container h3 {
+    color: var(--verde-oscuro);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  /* Textarea de publicación */
+  .tweet-form-container textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--verde-claro);
+    border-radius: 8px;
+    resize: none;
+    font-family: inherit;
+    background-color: white;
+    transition: border-color 0.3s ease;
+    margin-bottom: 0.5rem;
+  }
+  
+  .tweet-form-container textarea:focus {
+    outline: none;
+    border-color: var(--verde-medio);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+  }
+  
+  /* Contador de caracteres */
+  .char-counter {
+    color: var(--verde-medio);
+    font-size: 0.85rem;
+    text-align: right;
+    margin-bottom: 0.5rem;
+  }
+  
+  .char-counter.warning {
+    color: #ff9800; /* Naranja para advertencia */
+  }
+  
+  .char-counter.error {
+    color: #f44336; /* Rojo para error */
+  }
+  
+  /* Botón de publicación */
+  .publish-button {
+    background-color: var(--verde-medio);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: auto;
+    transition: all 0.3s ease;
+  }
+  
+  .publish-button:hover {
+    background-color: var(--verde-oscuro);
+    transform: translateY(-2px);
+  }
+  
+  .publish-button:disabled {
+    background-color: #bdbdbd;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .tweet-form-container {
+      padding: 1rem;
+    }
+    
+    .publish-button {
+        background-color: transparent;
+        border: 2px solid white;
+        color: white;
+        padding: 0.5rem 1.2rem;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+    }
+  }

@@ -1,0 +1,104 @@
+/* Contenedor principal */
+.tweet-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  /* Tarjeta individual de tweet */
+  .tweet-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    border-left: 4px solid var(--verde-medio);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .tweet-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Encabezado del tweet (usuario) */
+  .tweet-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .user-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--verde-claro);
+  }
+  
+  .username {
+    font-weight: 600;
+    color: var(--verde-oscuro);
+  }
+  
+  .username::before {
+    content: "@";
+  }
+  
+  /* Contenido del tweet */
+  .tweet-content {
+    color: var(--texto-oscuro);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  
+  /* Acciones (like, retweet) */
+  .tweet-actions {
+    display: flex;
+    gap: 1.5rem;
+    border-top: 1px dashed var(--verde-claro);
+    padding-top: 1rem;
+  }
+  
+  .action-button {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--verde-medio);
+    cursor: pointer;
+    font-weight: 500;
+    padding: 0.5rem 0.8rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .action-button:hover {
+    background-color: var(--verde-pastel);
+    color: var(--verde-oscuro);
+  }
+  
+  /* Estilos específicos para cada acción */
+  .water-button::before {
+    content: "💧";
+  }
+  
+  .propagate-button::before {
+    content: "🌱";
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .tweet-card {
+      padding: 1rem;
+    }
+    
+    .tweet-actions {
+      gap: 1rem;
+    }
+    
+    .action-button {
+      font-size: 0.9rem;
+    }
+  }
