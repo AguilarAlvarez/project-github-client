@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import styles from './maze-styles.module.css';
 import Player from './Player';
-import { generateMaze } from '@/utils/maze'
+import { findStartPosition, generateMaze } from '@/utils/maze'
 
 type Position = { x: number; y: number };
 type Cell = 'P' | 'W' | 'S' | 'E';
@@ -26,9 +26,18 @@ const Maze = () => {
     }, [maze]);
     const resetMaze = () => {
         setMaze(generateMaze(40));
+        setPlayerPos(findStartPosition(maze))
         setGameWon(false);
     };
-
+    const itsPlayerClose = (x: number, y: number) => {
+        if (((-1 <= (playerPos.x - x)) && ((playerPos.x - x) <= 1))) {
+            if (((-1 <= (playerPos.y - y)) && ((playerPos.y - y) <= 1))) {
+                return false
+            }
+            return true
+        }
+        return true
+    }
     const movePlayer = useCallback((dx: number, dy: number) => {
         if (gameWon) return;
 
@@ -67,21 +76,31 @@ const Maze = () => {
             <h2>🌿 Laberinto del Jardín</h2>
 
             {gameWon ? (
-                <div className={styles.winMessage}>¡Encontraste la salida! 🎉</div>
+                <div className={styles.winMessage} >
+                    <p>
+                        ¡Encontraste la salida! 🎉
+                    </p>
+                    <button onClick={() => resetMaze()}>Reiniciar</button>
+                </div>
             ) : (
                 <div className={styles.maze}>
                     {maze.map((row, y) => (
                         <div key={y} className={styles.row}>
                             {row.map((cell, x) => (
+
                                 <div
                                     key={x}
-                                    className={`${styles.cell} ${cell === 'W' ? styles.wall :
+                                    className={`${styles.cell} ${itsPlayerClose(x, y) ? styles.dark : cell === 'W' ? styles.wall :
                                         cell === 'E' ? styles.exit : 'E'
                                         }`}
                                 >
                                     {playerPos.x === x && playerPos.y === y && <Player />}
-                                    {cell === 'E' && !gameWon && '🌻'}
+                                    {cell === 'E' && !gameWon}
                                 </div>
+
+
+
+
                             ))}
                         </div>
                     ))}
@@ -90,5 +109,6 @@ const Maze = () => {
         </div>
     );
 };
+
 
 export default Maze;

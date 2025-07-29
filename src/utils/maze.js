@@ -208,3 +208,7 @@ function showMaze(maze) {
         console.log(line);
     }
 }
+export function findStartPosition(maze) {
+    const x = maze[0].findIndex(cell => cell === "S")
+    return { x: x, y: maze.length - 1 }
+}
