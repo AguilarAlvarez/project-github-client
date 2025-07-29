@@ -14,7 +14,6 @@ const App = () => {
     });
     const [update, setUpdate] = useState(true)
     useEffect(() => {
-        console.log(FETCH_ROUTE)
         const fetchData = async () => {
 
             fetch(`${FETCH_ROUTE}/tasks`, { method: 'GET' })
@@ -33,7 +32,6 @@ const App = () => {
         e.preventDefault();
         if (task.title.trim() === '') return;
         try {
-            console.log(task)
             fetch(`${FETCH_ROUTE}/tasks`, {
                 headers: {
                     'Accept': 'application/json',
@@ -46,9 +44,10 @@ const App = () => {
                     date_completion: task.date
                 })
             }).then(response => response.json())
-                .then(data => console.log(data));
-            setUpdate(!update)
-            setTask({ title: '', description: '', date: '' });
+                .then(data => {
+                    setUpdate(!update)
+                    setTask({ title: '', description: '', date: '' });
+                });
         } catch (err) {
             console.log(err)
         }
@@ -67,8 +66,9 @@ const App = () => {
                     id: id
                 })
             }).then(response => response.json())
-                .then(data => console.log(data));
-            setUpdate(!update)
+                .then(data =>
+                    setUpdate(!update)
+                );
         } catch (err) {
             console.log(err)
         }

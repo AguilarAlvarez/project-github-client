@@ -1,1 +1,1 @@
-export const FETCH_ROUTE = "http://localhost:5000/api"
+export const FETCH_ROUTE = "https://project-github-server.onrender.com/api"
