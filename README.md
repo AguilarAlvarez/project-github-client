@@ -1,4 +1,4 @@
-# 🌿 GitHub Client Botánico
+# 🌿 Github Poject Client
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Next.js](https://img.shields.io/badge/Next.js-13.4+-black?logo=next.js)](https://nextjs.org/)
@@ -8,12 +8,12 @@ Este projecto junta algunos projectos pequeños que muestran mis conocimientos e
 
 ![Captura de pantalla de la aplicación](public/Home.png) 
 
-## 🌱 Características principales
+##  Características principales
 
 - **Diversidad de Projectos**: Encuentra repositorios con autocompletado
 - **Log/in**: uso de Use Auth para autentificacion de usuarios
 
-## 🛠️ Tecnologías utilizadas
+## Tecnologías utilizadas
 
 | Tecnología       | Uso                          |
 |------------------|------------------------------|
@@ -21,7 +21,7 @@ Este projecto junta algunos projectos pequeños que muestran mis conocimientos e
 | Tailwind CSS     | Estilizado con clases utilitarias |
 | Javascript.js       | Creacion de algoritmos para PlantLaybirth |
 
-## 🚀 Cómo empezar
+##  Cómo empezar
 
 ### Requisitos previos
 - Node.js 18+
