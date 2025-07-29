@@ -10,7 +10,7 @@ type Cell = 'P' | 'W' | 'S' | 'E';
 const Maze = () => {
     const [maze, setMaze] = useState<Cell[][]>([]);
     useEffect(() => {
-        const maze = generateMaze(42)
+        const maze = generateMaze(40)
         setMaze(maze)
     }, [])
 
@@ -26,7 +26,7 @@ const Maze = () => {
         });
     }, [maze]);
     const resetMaze = () => {
-        setMaze(generateMaze(42));
+        setMaze(generateMaze(40));
         setPlayerPos(findStartPosition(maze))
         setGameWon(false);
     };
