@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import styles from './maze-styles.module.css';
 import Player from './Player';
 import { findStartPosition, generateMaze } from '@/utils/maze'
+import Restart from './Restart';
 
 type Position = { x: number; y: number };
 type Cell = 'P' | 'W' | 'S' | 'E';
@@ -9,7 +10,7 @@ type Cell = 'P' | 'W' | 'S' | 'E';
 const Maze = () => {
     const [maze, setMaze] = useState<Cell[][]>([]);
     useEffect(() => {
-        const maze = generateMaze(40)
+        const maze = generateMaze(42)
         setMaze(maze)
     }, [])
 
@@ -25,7 +26,7 @@ const Maze = () => {
         });
     }, [maze]);
     const resetMaze = () => {
-        setMaze(generateMaze(40));
+        setMaze(generateMaze(42));
         setPlayerPos(findStartPosition(maze))
         setGameWon(false);
     };
@@ -75,37 +76,31 @@ const Maze = () => {
         <div className={styles.mazeContainer}>
             <h2>🌿 Laberinto del Jardín</h2>
 
-            {gameWon ? (
-                <div className={styles.winMessage} >
-                    <p>
-                        ¡Encontraste la salida! 🎉
-                    </p>
-                    <button onClick={() => resetMaze()}>Reiniciar</button>
-                </div>
-            ) : (
-                <div className={styles.maze}>
-                    {maze.map((row, y) => (
-                        <div key={y} className={styles.row}>
-                            {row.map((cell, x) => (
+            {gameWon ? <Restart onClose={() => resetMaze()} /> : <></>}
 
-                                <div
-                                    key={x}
-                                    className={`${styles.cell} ${itsPlayerClose(x, y) ? styles.dark : cell === 'W' ? styles.wall :
-                                        cell === 'E' ? styles.exit : 'E'
-                                        }`}
-                                >
-                                    {playerPos.x === x && playerPos.y === y && <Player />}
-                                    {cell === 'E' && !gameWon}
-                                </div>
+            <div className={styles.maze}>
+                {maze.map((row, y) => (
+                    <div key={y} className={styles.row}>
+                        {row.map((cell, x) => (
+
+                            <div
+                                key={x}
+                                className={`${styles.cell} ${itsPlayerClose(x, y) ? styles.dark : cell === 'W' ? styles.wall :
+                                    cell === 'E' ? styles.exit : 'E'
+                                    }`}
+                            >
+                                {playerPos.x === x && playerPos.y === y && <Player />}
+                                {cell === 'E' && !gameWon}
+                            </div>
 
 
 
 
-                            ))}
-                        </div>
-                    ))}
-                </div>
-            )}
+                        ))}
+                    </div>
+                ))}
+            </div>
+
         </div>
     );
 };

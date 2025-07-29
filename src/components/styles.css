@@ -51,4 +51,12 @@
     box-shadow: var(--sombra-suave);
     backdrop-filter: blur(2px); /* Efecto vidrio sutil */
     transition: all 0.3s ease;
+    min-height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+  }
+  .card:hover{
+    scale: 1.05;
   }

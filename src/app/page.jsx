@@ -7,8 +7,9 @@ const projectsData = [
     title: "TODO List",
     description: "Una pequeña forma de ver manejar tus tareas y oganizar tu tiempo",
     category: "Web App",
-    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-    , redirectPage: "todo"
+    imageUrl: "./Todo.png"
+    , redirectPage: "todo",
+    tags: ["Node js", "Javascript", "Next js", "Postrges Sql", "React", "Express",]
   },
   {
     id: 2,
@@ -16,7 +17,8 @@ const projectsData = [
     description: "PokeDex donde usando la poke api podras buscar entre una gran selecion de pokemons y ver su informacion, usando tailwindcss para los estilos y animaciones",
     category: "web App",
     imageUrl: "./Pokedex.png"
-    , redirectPage: "pokedex"
+    , redirectPage: "pokedex",
+    tags: ["Javascript", "Tailwind CSS", "Next js", "React"]
 
   },
   {
@@ -24,8 +26,21 @@ const projectsData = [
     title: "PlanTweet",
     description: "Una pequeña copia de tweeter con tematioca de jardin",
     category: "Web App",
-    imageUrl: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-    , redirectPage: "plantweet"
+    imageUrl: "./PlanTweet.png"
+    , redirectPage: "plantweet",
+    tags: ["Node js", "Typescript", "Postrges Sql", "Next js", "React", "Express", "Tailwind CSS"]
+
+
+  },
+  {
+    id: 4,
+    title: "MazeSnail",
+    description: "UN juego de laberintos en donde llevaras a un caracol que busca curzar un jardin",
+    category: "Web App",
+    imageUrl: "./PlantLaybirth.png"
+    , redirectPage: "maze",
+    tags: ["Javascript", "TypeScript", "Next js", "React"]
+
 
   }
 ];
@@ -41,7 +56,7 @@ const ProjectsPage = () => {
       <div className="projects-grid">
         {projectsData.map((project, index) => (
           <a key={index} href={project.redirectPage}>
-            <CardComponent key={index} imageUrl={project.imageUrl} title={project.title} description={project.description} />
+            <CardComponent key={index} imageUrl={project.imageUrl} title={project.title} tags={project.tags} description={project.description} />
 
           </a>
         ))}
